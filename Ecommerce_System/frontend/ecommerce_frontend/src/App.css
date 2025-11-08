@@ -1,0 +1,263 @@
+/* ===== Global Reset ===== */
+html,
+body,
+#root {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: "Segoe UI", sans-serif;
+    background-color: #f5f6fa;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+/* ===== Navbar ===== */
+nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    padding: 15px 30px;
+    background: #007bff;
+    color: white;
+    font-weight: 500;
+    flex-wrap: wrap;
+    /* makes navbar items wrap on smaller screens */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.2s;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    opacity: 0.9;
+}
+
+/* ===== Main Container ===== */
+.container {
+    width: 95%;
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    min-height: calc(100vh - 100px);
+    /* ensures full screen height minus navbar */
+    box-sizing: border-box;
+    overflow-x: auto;
+    /* allows table scroll on small screens */
+}
+
+/* ===== Orders Table ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    overflow: hidden;
+    font-size: 15px;
+}
+
+th,
+td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+    white-space: nowrap;
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+    font-weight: 600;
+}
+
+tr:hover {
+    background-color: #eef5ff;
+}
+
+/* ===== Badges ===== */
+.badge {
+    padding: 6px 10px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    display: inline-block;
+    min-width: 75px;
+    text-align: center;
+}
+
+.badge-warning {
+    background-color: #ffc107;
+}
+
+.badge-success {
+    background-color: #28a745;
+}
+
+.badge-danger {
+    background-color: #dc3545;
+}
+
+/* ===== Responsive Adjustments ===== */
+@media (max-width: 992px) {
+    nav {
+        justify-content: center;
+    }
+
+    .container {
+        width: 95%;
+        padding: 15px;
+        margin: 10px auto;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    th,
+    td {
+        padding: 10px 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    th,
+    td {
+        font-size: 13px;
+        padding: 8px 10px;
+    }
+
+    .badge {
+        font-size: 12px;
+        padding: 5px 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav a {
+        font-size: 14px;
+    }
+
+    .container {
+        width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    table {
+        font-size: 12px;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* ===== Product Grid ===== */
+.page-container {
+    padding: 20px;
+    min-height: 100vh;
+    background-color: #f5f6fa;
+}
+
+.page-title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Responsive grid layout */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    padding: 0 10px;
+}
+
+/* Product Card styling */
+.product-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.product-details {
+    padding: 15px;
+}
+
+.product-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+.product-desc {
+    font-size: 14px;
+    color: #666;
+    margin: 10px 0;
+}
+
+.product-price {
+    font-size: 16px;
+    color: #007bff;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.btn-buy {
+    padding: 8px 16px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.btn-buy:hover {
+    background: #0056b3;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    .product-image {
+        height: 180px;
+    }
+}
